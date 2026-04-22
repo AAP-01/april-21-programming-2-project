@@ -1,1 +1,1 @@
-lorem ipsum
+end of semester project for programming 2

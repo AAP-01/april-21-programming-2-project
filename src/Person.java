@@ -1,3 +1,4 @@
+// Step 1
 import java.time.LocalDate;
 
 public abstract class Person {
@@ -26,10 +27,16 @@ public abstract class Person {
 
     public abstract void displayInfo();
 
+    // Step 2
+    abstract public int calculateMonthlySalary();
+
+    abstract public int calculateWeeklyWorkHours();
+    // End of step 2
+
+    // Getters and setters
     public int getEmployeeID(){
         return employeeID;
     }
-
     public void setEmployeeID(int employeeID){
         this.employeeID = employeeID;
     }
@@ -37,7 +44,6 @@ public abstract class Person {
     public String getFirstName(){
         return firstName;
     }
-
     public void setFirstName(String firstName){
         this.firstName = firstName;
     }
@@ -45,7 +51,6 @@ public abstract class Person {
     public String getLastName(){
         return lastName;
     }
-
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
@@ -53,7 +58,6 @@ public abstract class Person {
     public int getAge(){
         return age;
     }
-
     public void setAge(int age){
         this.age = age;
     }
@@ -61,7 +65,6 @@ public abstract class Person {
     public LocalDate getHireDate(){
         return hireDate;
     }
-
     public void setHireDate(LocalDate hireDate){
         this.hireDate = hireDate;
     }
@@ -69,7 +72,6 @@ public abstract class Person {
     public String getAddress(){
         return address;
     }
-
     public void setAddress(String address){
         this.address = address;
     }
@@ -77,17 +79,14 @@ public abstract class Person {
     public String getPhoneNumber(){
         return phoneNumber;
     }
-
     public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
 
+    // This is supposed to be part of step 6 (John)
     @Override
     public String toString(){
         return "Person{" + "employeeID = " + employeeID + ", firstName = " + firstName + ", lastName = " + lastName + ", age = " + age + ", hireDate = " + hireDate + ", address = " + address + ", phoneNumber = " + phoneNumber + " }";
     }
-
-
-
-
+    // End of step 1
 }
