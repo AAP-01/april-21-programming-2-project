@@ -1,0 +1,77 @@
+import java.time.LocalDate;
+
+public abstract class PoliceEmployee extends Person implements Payroll {
+
+    protected String department;
+    protected String badgeNumber;
+    protected String rank;
+
+    public PoliceEmployee(){
+
+    }
+
+    public PoliceEmployee(int employeeID, String firstName, String lastName, int age, LocalDate hireDate, String address, String phoneNumber, String department, String badgeNumber, String rank){
+        super(employeeID, firstName, lastName, age, hireDate, address, phoneNumber);
+        this.department = department;
+        this.badgeNumber = badgeNumber;
+        this.rank = rank;
+    }
+
+    @Override
+    public void displayInfo(){
+        System.out.println("Employee ID : " + employeeID);
+        System.out.println("First Name: " + firstName);
+        System.out.println("Last Name : " + lastName);
+        System.out.println("Age : " + age);
+        System.out.println("Hire Date : " + hireDate);
+        System.out.println("Address : " + address);
+        System.out.println("Phone : " + phoneNumber);
+        System.out.println("Department : " + department);
+        System.out.println("Badge Number : " + badgeNumber);
+        System.out.println("Rank : " + rank);
+    }
+
+    @Override
+    public int calculateAnnualSalary(){
+        return calculateMonthlySalary() * 12;
+    }
+
+    @Override
+    public double calculateOvertimePay(int overtimeHours){
+        double hourlyRate = calculateMonthlySalary() / 160.0;
+        return hourlyRate * 1.5 * overtimeHours;
+    }
+
+    public String getDepartment(){
+        return department;
+    }
+
+    public void setDepartment(String department){
+        this.department = department;
+    }
+
+    public String getBadgeNumber(){
+        return badgeNumber;
+    }
+
+    public void setBadgeNumber(String badgeNumber){
+        this.badgeNumber = badgeNumber;
+    }
+
+    public String getRank(){
+        return rank;
+    }
+
+    public void setRank(String rank){
+        this.rank = rank;
+    }
+
+    @Override
+    public String toString() {
+        return "PoliceEmployee{" + super.toString() +
+                ", department=" + department +
+                ", badgeNumber=" + badgeNumber +
+                ", rank=" + rank + "}";
+    }
+
+}
