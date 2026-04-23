@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public abstract class CivilianStaff extends PoliceEmployee{
+public abstract class CivilianStaff extends PoliceStaff {
 
     protected String jobTitle;
     protected String officeLocation;

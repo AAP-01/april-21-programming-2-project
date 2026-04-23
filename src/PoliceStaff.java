@@ -1,16 +1,16 @@
 import java.time.LocalDate;
 
-public abstract class PoliceEmployee extends Person implements Payroll {
+public abstract class PoliceStaff extends Person implements Payroll {
 
     protected String department;
     protected String badgeNumber;
     protected String rank;
 
-    public PoliceEmployee(){
+    public PoliceStaff(){
 
     }
 
-    public PoliceEmployee(int employeeID, String firstName, String lastName, int age, LocalDate hireDate, String address, String phoneNumber, String department, String badgeNumber, String rank){
+    public PoliceStaff(int employeeID, String firstName, String lastName, int age, LocalDate hireDate, String address, String phoneNumber, String department, String badgeNumber, String rank){
         super(employeeID, firstName, lastName, age, hireDate, address, phoneNumber);
         this.department = department;
         this.badgeNumber = badgeNumber;

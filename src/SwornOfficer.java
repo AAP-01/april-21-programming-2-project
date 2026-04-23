@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public abstract class SwornOfficer extends PoliceEmployee{
+public abstract class SwornOfficer extends PoliceStaff {
 
     protected String badgeSerialNumber;
     protected boolean isArmed;
