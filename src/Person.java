@@ -1,5 +1,6 @@
 // Step 1
 import java.time.LocalDate;
+import java.util.Objects;
 
 public abstract class Person {
 
@@ -89,4 +90,21 @@ public abstract class Person {
         return "Person{" + "employeeID = " + employeeID + ", firstName = " + firstName + ", lastName = " + lastName + ", age = " + age + ", hireDate = " + hireDate + ", address = " + address + ", phoneNumber = " + phoneNumber + " }";
     }
     // End of step 1
+
+    // Step 6
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        Person person = (Person) o;
+
+        return employeeID == person.employeeID &&
+                Objects.equals(firstName, person.firstName) &&
+                Objects.equals(lastName, person.lastName);
+    }
+    // End of step 6
 }
