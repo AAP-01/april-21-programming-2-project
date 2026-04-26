@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public abstract class PoliceStaff extends Person implements Payroll {
+public abstract class PoliceStaff extends Person implements Payroll, Comparable<PoliceStaff> {
 
     protected String department;
     protected String badgeNumber;
@@ -73,5 +73,12 @@ public abstract class PoliceStaff extends Person implements Payroll {
                 ", badgeNumber=" + badgeNumber +
                 ", rank=" + rank + "}";
     }
+
+    @Override
+    public int compareTo(PoliceStaff other){
+        return Integer.compare(this.employeeID, other.employeeID);
+    }
+    //step 7
+
 
 }
