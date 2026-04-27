@@ -84,7 +84,6 @@ public abstract class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    // This is supposed to be part of step 6 (John)
     @Override
     public String toString(){
         return "Person{" + "employeeID = " + employeeID + ", firstName = " + firstName + ", lastName = " + lastName + ", age = " + age + ", hireDate = " + hireDate + ", address = " + address + ", phoneNumber = " + phoneNumber + " }";

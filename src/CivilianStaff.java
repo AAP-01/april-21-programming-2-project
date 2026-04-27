@@ -33,18 +33,12 @@ public abstract class CivilianStaff extends PoliceStaff {
     public String getJobTitle(){
         return jobTitle;
     }
-
     public void setJobTitle(String jobTitle){
         this.jobTitle = jobTitle;
     }
 
-    public String getOfficeLocation(){
-        return officeLocation;
-    }
-
-    public void setOfficeLocation(String officeLocation){
-        this.officeLocation = officeLocation;
-    }
+    public String getOfficeLocation() {return officeLocation;}
+    public void setOfficeLocation(String officeLocation) {this.officeLocation = officeLocation;}
 
 
     @Override

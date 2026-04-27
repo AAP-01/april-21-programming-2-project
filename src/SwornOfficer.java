@@ -33,15 +33,13 @@ public abstract class SwornOfficer extends PoliceStaff {
     public String getBadgeSerialNumber(){
         return badgeSerialNumber;
     }
-
     public void setBadgeSerialNumber(String badgeSerialNumber){
         this.badgeSerialNumber = badgeSerialNumber;
     }
 
-    public boolean isArmed(){
+    public boolean getIsArmed(){
         return isArmed;
     }
-
     public void setArmed(boolean armed){
         this.isArmed = armed;
     }

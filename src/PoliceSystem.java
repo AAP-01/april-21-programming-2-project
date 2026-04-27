@@ -7,6 +7,7 @@ public class PoliceSystem {
 
     public static void main(String[] args) {
 
+        // Isn't this step 10 :sob:
         Scanner scanner = new Scanner(System.in);
         int choice;
 
@@ -60,6 +61,7 @@ public class PoliceSystem {
 
     private static void addEmployee(Scanner scanner) {
 
+        //Should add some form of protection whenever the user inputs the wrong data type
         System.out.print("Enter Employee ID: ");
         int employeeID = scanner.nextInt();
         scanner.nextLine();

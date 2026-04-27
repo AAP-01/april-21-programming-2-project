@@ -29,6 +29,9 @@ public class Detective extends SwornOfficer
         this.caseAssigned = caseAssigned;
     }
 
+    // Getters
+    public String getCaseAssigned() {return caseAssigned;}
+
     @Override
     public String toString()
     {

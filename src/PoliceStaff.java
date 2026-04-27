@@ -42,10 +42,10 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
         return hourlyRate * 1.5 * overtimeHours;
     }
 
+    // Getters and setters
     public String getDepartment(){
         return department;
     }
-
     public void setDepartment(String department){
         this.department = department;
     }
@@ -53,7 +53,6 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
     public String getBadgeNumber(){
         return badgeNumber;
     }
-
     public void setBadgeNumber(String badgeNumber){
         this.badgeNumber = badgeNumber;
     }
@@ -61,7 +60,6 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
     public String getRank(){
         return rank;
     }
-
     public void setRank(String rank){
         this.rank = rank;
     }

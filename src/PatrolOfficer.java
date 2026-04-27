@@ -32,6 +32,14 @@ public class PatrolOfficer extends SwornOfficer {
         this.unitCallsign = unitCallsign;
     }
 
+    // Getters
+    public String getCallsign() {return callsign;}
+    public String getUnitCallsign() {return unitCallsign;}
+
+    // Setters
+    public void setCallsign(String callsign) {this.callsign = callsign;}
+    public void setUnitCallsign(String unitCallsign) {this.unitCallsign = unitCallsign;}
+
     @Override
     public String toString()
     {
