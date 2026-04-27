@@ -2,8 +2,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 // Step 4
-public class PatrolOfficer extends SwornOfficer
-{
+public class PatrolOfficer extends SwornOfficer {
     // Step 6
     private String callsign;
     private String unitCallsign;
