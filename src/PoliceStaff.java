@@ -5,6 +5,8 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
     protected String department;
     protected String badgeNumber;
     protected String rank;
+    protected double dailyHours;
+    protected int workDays;
 
     public PoliceStaff(){
 
@@ -32,12 +34,24 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
     }
 
     @Override
-    public int calculateAnnualSalary(){
+    public double calculateWeeklyWorkHours(double dailyHours, int workDays)
+    {
+        return workDays * dailyHours;
+    }
+
+    @Override
+    public double calculateMonthlySalary()
+    {
+        return calculateWeeklyWorkHours(dailyHours, workDays) * hourlyRate(rank);
+    }
+
+    @Override
+    public double calculateAnnualSalary(){
         return calculateMonthlySalary() * 12;
     }
 
     @Override
-    public double calculateOvertimePay(int overtimeHours){
+    public double calculateOvertimePay(double overtimeHours){
         double hourlyRate = calculateMonthlySalary() / 160.0;
         return hourlyRate * 1.5 * overtimeHours;
     }
@@ -64,12 +78,20 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
         this.rank = rank;
     }
 
+    public double getDailyHours() {return dailyHours;}
+    public void setDailyHours(double dailyHours) {this.dailyHours = dailyHours;}
+
+    public int getWorkDays() {return workDays;}
+    public void setWorkDays(int workDays) {this.workDays = workDays;}
+
     @Override
     public String toString() {
-        return "PoliceEmployee{" + super.toString() +
+        return "PoliceStaff{" + super.toString() +
                 ", department=" + department +
                 ", badgeNumber=" + badgeNumber +
-                ", rank=" + rank + "}";
+                ", rank=" + rank +
+                ", dailyHours=" + dailyHours +
+                ", workDays=" + workDays + "}";
     }
 
     @Override

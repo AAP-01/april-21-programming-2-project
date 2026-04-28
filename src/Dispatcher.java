@@ -27,6 +27,30 @@ public class Dispatcher extends CivilianStaff
     }
 
     @Override
+    public String displayRoleDescription()
+    {
+        return "Dispatchers respond to emergency calls and signal to emergency services what to know and prepare.";
+    }
+
+    @Override
+    public double hourlyRate(String rank)
+    {
+        return switch (rank.toLowerCase()) {
+            // According to RCMP salaries
+            case "trainee" -> 35.00;
+            case "call-taker" -> 38.00;
+            case "shift supervisor" -> 41.00;
+            case "team leader" -> 45.00;
+            case "senior manager" -> 55.00;
+            default -> {
+                System.out.println("Rank invalid");
+                yield -1.00;
+            }
+        };
+    }
+
+
+    @Override
     public String toString()
     {
         return "Dispatcher{" + super.toString() + "}";

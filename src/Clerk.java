@@ -27,6 +27,29 @@ public class Clerk extends CivilianStaff
     }
 
     @Override
+    public String displayRoleDescription()
+    {
+        return "Clerks, namely records clerks, store and organize records of all actions and expenses of the police department.";
+    }
+
+    @Override
+    public double hourlyRate(String rank)
+    {
+        return switch (rank.toLowerCase()) {
+            // Canada average
+            case "clerk i" -> 16.00;
+            case "clerk ii" -> 23.00;
+            case "specialist" -> 30.00;
+            case "supervisor" -> 32.00;
+            case "manager" -> 33.00;
+            default -> {
+                System.out.println("Rank invalid");
+                yield -1.00;
+            }
+        };
+    }
+
+    @Override
     public String toString()
     {
         return "Clerk{" + super.toString() + "}";

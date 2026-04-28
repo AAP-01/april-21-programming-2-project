@@ -26,12 +26,10 @@ public abstract class Person {
         this.phoneNumber = phoneNumber;
     }
 
+    // Step 2
     public abstract void displayInfo();
 
-    // Step 2
-    abstract public int calculateMonthlySalary();
-
-    abstract public int calculateWeeklyWorkHours();
+    abstract public String displayRoleDescription();
     // End of step 2
 
     // Getters and setters

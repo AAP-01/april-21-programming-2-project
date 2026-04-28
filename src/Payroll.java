@@ -1,6 +1,8 @@
-public interface Payroll {
-
-    public int calculateMonthlySalary();
-    public int calculateAnnualSalary();
-    public double calculateOvertimePay(int overtimeHours);
+public interface Payroll
+{
+    public double hourlyRate(String rank);
+    public double calculateWeeklyWorkHours(double totalHours, int days);
+    public double calculateMonthlySalary();
+    public double calculateAnnualSalary();
+    public double calculateOvertimePay(double overtimeHours);
 }

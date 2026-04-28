@@ -20,16 +20,6 @@ public abstract class CivilianStaff extends PoliceStaff {
         System.out.println("Office : " + officeLocation);
     }
 
-    @Override
-    public int calculateMonthlySalary() {
-        return 3500;
-    }
-
-    @Override
-    public int calculateWeeklyWorkHours() {
-        return 37;
-    }
-
     public String getJobTitle(){
         return jobTitle;
     }

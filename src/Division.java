@@ -15,8 +15,24 @@ public class Division {
         divisionMembers.add(e);
     }
 
+    public void displayDivisionMembers(){
+        System.out.println("Division: " + divisionName);
+
+        if(supervisor != null){
+            System.out.println("Supervisor: " + supervisor.getRank() + supervisor.getFirstName() + " " + supervisor.getLastName());
+        }
+        else
+        {
+            System.out.println("Supervisor: none assigned");
+        }
+
+        for(PoliceStaff e : divisionMembers){
+            System.out.println(e);
+        }
+    }
+
     // Getters
-    public String getName(){
+    public String getDivisionName(){
         return divisionName;
     }
     public PoliceStaff getSupervisor(){
@@ -36,22 +52,5 @@ public class Division {
         }
         this.supervisor = e;
     }
-
-    public void displayDivisionMembers(){
-        System.out.println("Division: " + divisionName);
-
-        if(supervisor != null){
-            System.out.println("Supervisor: " + supervisor.getRank() + supervisor.getFirstName() + " " + supervisor.getLastName());
-        }
-        else
-        {
-            System.out.println("Supervisor: none assigned");
-        }
-
-        for(PoliceStaff e : divisionMembers){
-            System.out.println(e);
-        }
-    }
 }
-
 //Step 9

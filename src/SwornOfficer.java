@@ -20,16 +20,6 @@ public abstract class SwornOfficer extends PoliceStaff {
         System.out.println("Armed : " + isArmed);
     }
 
-    @Override
-    public int calculateMonthlySalary() {
-        return 5000;
-    }
-
-    @Override
-    public int calculateWeeklyWorkHours() {
-        return 42;
-    }
-
     public String getBadgeSerialNumber(){
         return badgeSerialNumber;
     }

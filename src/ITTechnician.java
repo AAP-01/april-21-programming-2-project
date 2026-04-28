@@ -27,6 +27,29 @@ public class ITTechnician extends CivilianStaff
     }
 
     @Override
+    public String displayRoleDescription()
+    {
+        return "IT technicians build and maintain the police department's electronic and digital systems.";
+    }
+
+    @Override
+    public double hourlyRate(String rank)
+    {
+        return switch (rank.toLowerCase()) {
+            // Canada average
+            case "technician i" -> 33.00;
+            case "technician ii" -> 40.00;
+            case "senior technician" -> 47.00;
+            case "lead technician" -> 50.00;
+            case "systems supervisor" -> 60.00;
+            default -> {
+                System.out.println("Rank invalid");
+                yield -1.00;
+            }
+        };
+    }
+
+    @Override
     public String toString()
     {
         return "ITTechnician{" + super.toString() + "}";
