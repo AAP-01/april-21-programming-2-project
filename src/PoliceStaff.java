@@ -1,12 +1,15 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class PoliceStaff extends Person implements Payroll, Comparable<PoliceStaff> {
 
-    protected String department;
-    protected String badgeNumber;
-    protected String rank;
-    protected double dailyHours;
-    protected int workDays;
+    private String department;
+    private String badgeNumber;
+    private String rank;
+    private double dailyHours;
+    private int workDays;
+    private List<TrainingRecord> trainingRecordList;
 
     public PoliceStaff(){
 
@@ -17,22 +20,25 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
         this.department = department;
         this.badgeNumber = badgeNumber;
         this.rank = rank;
+
+        this.trainingRecordList = new ArrayList<>();
     }
 
     @Override
     public void displayInfo(){
-        System.out.println("Employee ID : " + employeeID);
-        System.out.println("First Name: " + firstName);
-        System.out.println("Last Name : " + lastName);
-        System.out.println("Age : " + age);
-        System.out.println("Hire Date : " + hireDate);
-        System.out.println("Address : " + address);
-        System.out.println("Phone : " + phoneNumber);
-        System.out.println("Department : " + department);
-        System.out.println("Badge Number : " + badgeNumber);
-        System.out.println("Rank : " + rank);
+        System.out.println("Employee ID : " + getEmployeeID());
+        System.out.println("First Name: " + getFirstName());
+        System.out.println("Last Name : " + getLastName());
+        System.out.println("Age : " + getAge());
+        System.out.println("Hire Date : " + getHireDate());
+        System.out.println("Address : " + getAddress());
+        System.out.println("Phone : " + getPhoneNumber());
+        System.out.println("Department : " + getDepartment());
+        System.out.println("Badge Number : " + getBadgeNumber());
+        System.out.println("Rank : " + getRank());
     }
 
+    // Methods from Payroll interface class
     @Override
     public double calculateWeeklyWorkHours(double dailyHours, int workDays)
     {
@@ -54,6 +60,12 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
     public double calculateOvertimePay(double overtimeHours){
         double hourlyRate = calculateMonthlySalary() / 160.0;
         return hourlyRate * 1.5 * overtimeHours;
+    }
+
+    // Adds training records to the employee
+    public void addRecord(TrainingRecord trainingRecord)
+    {
+        trainingRecordList.add(trainingRecord);
     }
 
     // Getters and setters
@@ -84,19 +96,24 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
     public int getWorkDays() {return workDays;}
     public void setWorkDays(int workDays) {this.workDays = workDays;}
 
-    @Override
-    public String toString() {
-        return "PoliceStaff{" + super.toString() +
-                ", department=" + department +
-                ", badgeNumber=" + badgeNumber +
-                ", rank=" + rank +
-                ", dailyHours=" + dailyHours +
-                ", workDays=" + workDays + "}";
-    }
+    public List<TrainingRecord> getTrainingRecordList() {return trainingRecordList;}
 
     @Override
+    public String toString() {
+        return "PoliceStaff{" +
+                "department='" + department +
+                ", badgeNumber='" + badgeNumber +
+                ", rank='" + rank +
+                ", dailyHours=" + dailyHours +
+                ", workDays=" + workDays +
+                ", trainingRecordList=" + trainingRecordList +
+                '}';
+    }
+
+    // Comparable
+    @Override
     public int compareTo(PoliceStaff other){
-        return Integer.compare(this.employeeID, other.employeeID);
+        return Integer.compare(this.getEmployeeID(), other.getEmployeeID());
     }
     //step 7
 

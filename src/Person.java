@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public abstract class Person {
 
-    protected int employeeID;
-    protected String firstName;
-    protected String lastName;
-    protected int age;
-    protected LocalDate hireDate;
-    protected String address;
-    protected String phoneNumber;
+    private int employeeID;
+    private String firstName;
+    private String lastName;
+    private int age;
+    private LocalDate hireDate;
+    private String address;
+    private String phoneNumber;
 
     public Person(){
 

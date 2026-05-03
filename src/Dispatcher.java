@@ -26,12 +26,14 @@ public class Dispatcher extends CivilianStaff
         super(employeeID, firstName, lastName, age, hireDate, address, phoneNumber, department, badgeNumber, rank, jobTitle, officeLocation);
     }
 
+    // Overridden from Person class
     @Override
     public String displayRoleDescription()
     {
         return "Dispatchers respond to emergency calls and signal to emergency services what to know and prepare.";
     }
 
+    // Overridden from Payroll interface
     @Override
     public double hourlyRate(String rank)
     {
@@ -67,8 +69,8 @@ public class Dispatcher extends CivilianStaff
     {
         int result = 17;
 
-        result = 31 * result + employeeID;
-        result = Integer.parseInt(31 * result + badgeNumber);
+        result = 31 * result + getEmployeeID();
+        result = Integer.parseInt(31 * result + getBadgeNumber());
 
         return result;
     }

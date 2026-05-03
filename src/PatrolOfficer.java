@@ -23,11 +23,11 @@ public class PatrolOfficer extends SwornOfficer {
                          String badgeNumber,
                          String rank,
                          String badgeSerialNumber,
-                         boolean isArmed,
+                         boolean armed,
                          String callsign,
                          String unitCallsign)
     {
-        super(employeeID, firstName, lastName, age, hireDate, address, phoneNumber, department, badgeNumber, rank, badgeSerialNumber, isArmed);
+        super(employeeID, firstName, lastName, age, hireDate, address, phoneNumber, department, badgeNumber, rank, badgeSerialNumber, armed);
         this.callsign = callsign;
         this.unitCallsign = unitCallsign;
     }
@@ -80,8 +80,8 @@ public class PatrolOfficer extends SwornOfficer {
     {
         int result = 17;
 
-        result = 31 * result + employeeID;
-        result = Integer.parseInt(31 * result + badgeNumber);
+        result = 31 * result + getEmployeeID();
+        result = Integer.parseInt(31 * result + getBadgeNumber());
 
         return result;
     }

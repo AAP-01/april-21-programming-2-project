@@ -22,10 +22,10 @@ public class Detective extends SwornOfficer
                          String badgeNumber,
                          String rank,
                          String badgeSerialNumber,
-                         boolean isArmed,
+                         boolean armed,
                          String caseAssigned)
     {
-        super(employeeID, firstName, lastName, age, hireDate, address, phoneNumber, department, badgeNumber, rank, badgeSerialNumber, isArmed);
+        super(employeeID, firstName, lastName, age, hireDate, address, phoneNumber, department, badgeNumber, rank, badgeSerialNumber, armed);
         this.caseAssigned = caseAssigned;
     }
 
@@ -75,8 +75,8 @@ public class Detective extends SwornOfficer
     {
         int result = 17;
 
-        result = 31 * result + employeeID;
-        result = Integer.parseInt(31 * result + badgeNumber);
+        result = 31 * result + getEmployeeID();
+        result = Integer.parseInt(31 * result + getBadgeNumber());
 
         return result;
     }

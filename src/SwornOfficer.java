@@ -2,22 +2,22 @@ import java.time.LocalDate;
 
 public abstract class SwornOfficer extends PoliceStaff {
 
-    protected String badgeSerialNumber;
-    protected boolean isArmed;
+    private String badgeSerialNumber;
+    private boolean armed;
 
     public SwornOfficer() {}
 
-    public SwornOfficer(int employeeID, String firstName, String lastName, int age, LocalDate hireDate, String address, String phoneNumber, String department, String badgeNumber, String rank, String badgeSerialNumber, boolean isArmed) {
+    public SwornOfficer(int employeeID, String firstName, String lastName, int age, LocalDate hireDate, String address, String phoneNumber, String department, String badgeNumber, String rank, String badgeSerialNumber, boolean armed) {
         super(employeeID, firstName, lastName, age, hireDate, address, phoneNumber, department, badgeNumber, rank);
         this.badgeSerialNumber = badgeSerialNumber;
-        this.isArmed = isArmed;
+        this.armed = armed;
     }
 
     @Override
     public void displayInfo() {
         super.displayInfo();
         System.out.println("Badge Serial : " + badgeSerialNumber);
-        System.out.println("Armed : " + isArmed);
+        System.out.println("Armed : " + armed);
     }
 
     public String getBadgeSerialNumber(){
@@ -28,16 +28,16 @@ public abstract class SwornOfficer extends PoliceStaff {
     }
 
     public boolean getIsArmed(){
-        return isArmed;
+        return armed;
     }
     public void setArmed(boolean armed){
-        this.isArmed = armed;
+        this.armed = armed;
     }
 
     @Override
     public String toString() {
         return "SwornOfficer{" + super.toString() +
                 ", badgeSerialNumber=" + badgeSerialNumber +
-                ", isArmed=" + isArmed + "}";
+                ", armed=" + armed + "}";
     }
 }

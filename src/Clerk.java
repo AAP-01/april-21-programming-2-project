@@ -66,8 +66,8 @@ public class Clerk extends CivilianStaff
     {
         int result = 17;
 
-        result = 31 * result + employeeID;
-        result = Integer.parseInt(31 * result + badgeNumber);
+        result = 31 * result + getEmployeeID();
+        result = Integer.parseInt(31 * result + getBadgeNumber());
 
         return result;
     }
