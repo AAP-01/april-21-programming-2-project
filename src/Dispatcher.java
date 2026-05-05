@@ -51,6 +51,8 @@ public class Dispatcher extends CivilianStaff
         };
     }
 
+    @Override
+    public String getJobType() {return "Support";}
 
     @Override
     public String toString()

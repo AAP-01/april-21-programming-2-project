@@ -96,6 +96,9 @@ public abstract class PoliceStaff extends Person implements Payroll, Comparable<
     public int getWorkDays() {return workDays;}
     public void setWorkDays(int workDays) {this.workDays = workDays;}
 
+    // For phase 2 module 2
+    abstract public String getJobType();
+
     public List<TrainingRecord> getTrainingRecordList() {return trainingRecordList;}
 
     @Override

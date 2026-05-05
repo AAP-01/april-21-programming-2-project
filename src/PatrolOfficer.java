@@ -59,6 +59,9 @@ public class PatrolOfficer extends SwornOfficer {
     public String getCallsign() {return callsign;}
     public String getUnitCallsign() {return unitCallsign;}
 
+    @Override
+    public String getJobType() {return "Field";}
+
     // Setters
     public void setCallsign(String callsign) {this.callsign = callsign;}
     public void setUnitCallsign(String unitCallsign) {this.unitCallsign = unitCallsign;}

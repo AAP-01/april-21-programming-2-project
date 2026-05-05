@@ -49,6 +49,10 @@ public class ITTechnician extends CivilianStaff
         };
     }
 
+    // Getter
+    @Override
+    public String getJobType() {return "Technical";}
+
     @Override
     public String toString()
     {

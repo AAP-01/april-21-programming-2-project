@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Division {
 
@@ -6,14 +7,22 @@ public class Division {
     private PoliceStaff supervisor;
     private ArrayList<PoliceStaff> divisionMembers;
     private String courseRequirement;
-    private String certificationRequirement;
+    private static List<Division> divisions = new ArrayList<>();
 
-    public Division(String divisionName, PoliceStaff supervisor, String courseRequirement, String certificationRequirement){
+    // For phase 2 module
+    private int yearsOfExperienceRequired;
+    private String trainingRequired;
+    private String divisionType;
+
+    public Division(String divisionName, PoliceStaff supervisor, String courseRequirement, int yearsOfExperienceRequired, String trainingRequired, String divisionType){
         this.divisionName = divisionName;
         this.supervisor = supervisor;
         this.courseRequirement = courseRequirement;
-        this.certificationRequirement = certificationRequirement;
         this.divisionMembers = new ArrayList<>();
+        this.yearsOfExperienceRequired = yearsOfExperienceRequired;
+        this.trainingRequired = trainingRequired;
+        this.divisionType = divisionType;
+        divisions.add(this);
     }
 
     // Checks if the employee's training makes them eligible to join the division
@@ -58,6 +67,10 @@ public class Division {
     public ArrayList<PoliceStaff> getDivisionMembers(){
         return divisionMembers;
     }
+    public int getYearsOfExperienceRequired() {return yearsOfExperienceRequired;}
+    public String getTrainingRequired() {return trainingRequired;}
+    public String getDivisionType() {return divisionType;}
+    public static List<Division> getDivisions() {return divisions;}
 
     // Setters
     public void setDivisionName(String divisionName) {
@@ -69,5 +82,8 @@ public class Division {
         }
         this.supervisor = e;
     }
+    public void setYearsOfExperienceRequired(int yearsOfExperienceRequired) {this.yearsOfExperienceRequired = yearsOfExperienceRequired;}
+    public void setTrainingRequired(String trainingRequired) {this.trainingRequired = trainingRequired;}
+    public void setDivisionMembers(ArrayList<PoliceStaff> divisionMembers) {this.divisionMembers = divisionMembers;}
 }
 //Step 9

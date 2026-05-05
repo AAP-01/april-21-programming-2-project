@@ -55,6 +55,9 @@ public class Detective extends SwornOfficer
     // Getter
     public String getCaseAssigned() {return caseAssigned;}
 
+    @Override
+    public String getJobType() {return "Field";}
+
     // Setter
     public void setCaseAssigned(String caseAssigned) {this.caseAssigned = caseAssigned;}
 
