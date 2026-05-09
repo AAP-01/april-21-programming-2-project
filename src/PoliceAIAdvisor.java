@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class PoliceAIAdvisor
 {
     // Phase 2
+    // Module 1
     public String recommendDivision(PoliceStaff employee, String studentID)
     {
         List<Division> eligibleDivisions = new ArrayList<>();
@@ -36,7 +37,7 @@ public class PoliceAIAdvisor
                 return "Eligible divisions: " + eligibleDivisions.stream()
                                                 .map(Division::getDivisionName)
                                                 .collect(Collectors.joining(", ")) +
-                                                ". The employee has the required years of experience for these divisions";
+                                                ". The employee has the required years of experience for these divisions.";
             }
             else if (lastDigit >= 4 && lastDigit <= 6)
             {
@@ -57,7 +58,7 @@ public class PoliceAIAdvisor
                 return "Eligible divisions: " + eligibleDivisions.stream()
                                                 .map(Division::getDivisionName)
                                                 .collect(Collectors.joining(", ")) +
-                                                ". The employee has the sufficient training for these divisions";
+                                                ". The employee has the sufficient training for these divisions.";
             }
             else if (lastDigit >= 7 && lastDigit <= 9)
             {
@@ -73,10 +74,14 @@ public class PoliceAIAdvisor
                 return "Eligible divisions: " + eligibleDivisions.stream()
                                                 .map(Division::getDivisionName)
                                                 .collect(Collectors.joining(", ")) +
-                                                ". The employee's current position makes them suitable for these divisions";
+                                                ". The employee's current position makes them suitable for these divisions.";
             }
         }
 
-        return employee.getFirstName() + " " + employee.getLastName() + " isn't eligible for any division based on the given conditions";
+        return employee.getFirstName() + " " + employee.getLastName() + " isn't eligible for any division based on the given condition.";
     }
+
+    // Phase 3
+    // Module 2
+
 }

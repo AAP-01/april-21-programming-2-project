@@ -12,7 +12,7 @@ public class Division {
     // For phase 2 module
     private int yearsOfExperienceRequired;
     private String trainingRequired;
-    private String divisionType;
+    private String divisionType;    // Corresponds to the job types of PatrolOfficer, Investigator, Dispatcher, Clerk, and ITTechnician
 
     public Division(String divisionName, PoliceStaff supervisor, String courseRequirement, int yearsOfExperienceRequired, String trainingRequired, String divisionType){
         this.divisionName = divisionName;
