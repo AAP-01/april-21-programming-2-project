@@ -1,8 +1,9 @@
 // Step 1
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Person {
+public abstract class Person{
 
     private int employeeID;
     private String firstName;
