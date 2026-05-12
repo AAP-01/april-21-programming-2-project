@@ -83,5 +83,27 @@ public class PoliceAIAdvisor
 
     // Phase 3
     // Module 2
+    public List<PoliceStaff> getTopSupervisorCandidates(List<PoliceStaff> employees, String studentID)
+    {
+        List<PoliceStaff> supervisorCandidates = new ArrayList<>();
 
+        if (studentID == null || studentID.isEmpty() || !Character.isDigit(studentID.charAt(studentID.length() - 1)))
+            return null;
+
+        int lastDigit = studentID.charAt(studentID.length() - 1);   //Still in String form
+
+        if (Character.isDigit(lastDigit))
+        {
+            lastDigit = Character.getNumericValue(studentID.charAt(studentID.length() - 1));    // Now in int form
+
+
+
+            for (PoliceStaff employee : employees)
+            {
+
+            }
+        }
+
+        return supervisorCandidates;
+    }
 }
