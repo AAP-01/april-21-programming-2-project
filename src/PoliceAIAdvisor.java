@@ -1,6 +1,8 @@
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -90,18 +92,51 @@ public class PoliceAIAdvisor
         if (studentID == null || studentID.isEmpty() || !Character.isDigit(studentID.charAt(studentID.length() - 1)))
             return null;
 
-        int lastDigit = studentID.charAt(studentID.length() - 1);   //Still in String form
+        int lastDigit = studentID.charAt(studentID.length() - 1);
 
         if (Character.isDigit(lastDigit))
         {
             lastDigit = Character.getNumericValue(studentID.charAt(studentID.length() - 1));    // Now in int form
 
-
+            int minCertifications = (lastDigit == 0) ? 1 : lastDigit;
 
             for (PoliceStaff employee : employees)
             {
+                if (employee.getTrainingRecordList() != null)
+                {
+                    int certifiedCount = 0;
 
+                    for (TrainingRecord record : employee.getTrainingRecordList())
+                    {
+                        if (record.isCertified())
+                        {
+                            certifiedCount++;
+                        }
+                    }
+
+                    if (certifiedCount >= minCertifications)
+                    {
+                        supervisorCandidates.add(employee);
+                    }
+                }
             }
+
+            Collections.sort(supervisorCandidates, new Comparator<PoliceStaff>() {
+                @Override
+                public int compare(PoliceStaff e1, PoliceStaff e2) {
+                    int count1 = 0;
+                    int count2 = 0;
+
+                    for (TrainingRecord tr : e1.getTrainingRecordList()) {
+                        if (tr.isCertified()) count1++;
+                    }
+                    for (TrainingRecord tr : e2.getTrainingRecordList()) {
+                        if (tr.isCertified()) count2++;
+                    }
+
+                    return Integer.compare(count2, count1);
+                }
+            });
         }
 
         return supervisorCandidates;
